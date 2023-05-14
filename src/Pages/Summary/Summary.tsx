@@ -13,7 +13,7 @@ export const Summary: FC<SummaryProps> = ({ data }) => {
     <>
       <div className='px-5'>
         <HeaderSummary data={data} />
-        <div className='grid grid-cols-2 gap-8 grid-rows-summary'>
+        <div className='grid sm:grid-cols-2 gap-8 sm:grid-rows-summary grid-rows-summary640'>
           <div className='rounded-md border border-gray-400'>
             <RenderCount countParam={'income'} data={data} />
             <p className='mt-10 ml-10 text-xl'>Income</p>

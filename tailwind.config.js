@@ -8,6 +8,7 @@ module.exports = {
     extend: {
     gridTemplateRows: {
         'summary': 'repeat(2, minmax(250px, 1fr))',
+        'summary640': 'repeat(4, minmax(250px, 1fr))',
       }
     },
     container: {

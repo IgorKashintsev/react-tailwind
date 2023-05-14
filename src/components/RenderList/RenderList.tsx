@@ -41,7 +41,7 @@ export const RenderList: FC<RenderListProps> = ({ data }) => {
           {filtredArr.map((item) => (
             <div key={item._id}>
               <hr className='border-gray-300'></hr>
-              <li className='text-center'>
+              <li className='text-center sm:text-base text-sm'>
                 {item.name.first} {item.name.last}
               </li>
             </div>
@@ -54,7 +54,9 @@ export const RenderList: FC<RenderListProps> = ({ data }) => {
           {filtredArr.map((item) => (
             <div key={item._id}>
               <hr className='border-gray-300'></hr>
-              <li className='text-center'>{item.amount}</li>
+              <li className='text-center sm:text-base text-sm'>
+                {item.amount}
+              </li>
             </div>
           ))}
         </ul>
