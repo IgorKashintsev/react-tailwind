@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import { Summary } from "./components/Summary/Summary";
+import { List } from "./components/List/List";
+import { useEffect, useState } from "react";
+import { DataJson } from "./types";
 
-function App() {
+
+export const App = () => {
+  const [data, setData] = useState<DataJson | null>(null);
+
+  useEffect(() => {
+    setData(require('./data.json'));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Summary data={data} />} />
+        <Route path="/navigator/:tabId" element={<List data={data} />} />
+      </Routes>
+    </>
   );
 }
-
-export default App;
